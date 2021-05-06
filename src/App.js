@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 
+import Task from './Task';
+
 class App extends Component {
   state = {
     tasks: []
@@ -45,8 +47,10 @@ class App extends Component {
     nouveau tableau: tasksJSX
     */
 
-    const tasksJSX = this.state.tasks.map(bachi => {
-      return <li>{bachi.title}</li>
+    const tasksJSX = this.state.tasks.map(task => {
+      return (
+        <li><Task data={task} /></li>
+      )
     })
 
     /*
